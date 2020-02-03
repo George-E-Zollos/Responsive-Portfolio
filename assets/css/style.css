@@ -15,7 +15,8 @@ body {
 header {
     font-family: 'Georgia', Times, Times New Roman, serif;
     border-bottom: 1px solid #cccccc;
-    background-color: white;   
+    background-color: white; 
+    width: 100%;  
 }
 
 img {
@@ -26,7 +27,7 @@ img {
 #pageContainer {
 position: relative;
 min-height: 100vh;
-min-width: 100vw;
+width: 100%;
 }
 
 .container {
@@ -35,7 +36,7 @@ min-width: 100vw;
     max-width: 960px;
     width: 100%;
     justify-content: flex-start;
-    padding-right: 10px;
+    padding: auto 20px;
 }
 
 .name {
@@ -80,26 +81,19 @@ article {
     font-size: 30px;
 }
 
-.fill {
-    flex: 1;
-}
 
-footer {
-    position: absolute;
+.footer {
+    position: fixed;
+    left: 0;
     bottom: 0;
-    min-width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    width: 100%;
     border-top: 5px solid #4aaaa5;
     background-color: #666666;
     height: 60px;
-    margin-top: 10px;
+    text-align: center;
 }
 
 .copyright {
-    margin: auto 0;
     color: white;
 }
 form {
@@ -188,6 +182,17 @@ form {
 }
 
 @media (max-width: 980px) {
+    article {
+        max-width: 768px;
+        margin: 20px 20px 40px 20px;
+    }
+    form {
+        max-width: 768px;
+        margin: 20px 20px 40px;
+}
+    .container {
+        padding: 0 20px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -197,6 +202,25 @@ form {
     form {
         margin: 20px 20px 40px;
 }
+    }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
+    .container {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+    }
+    .name {
+        flex-basis: 100%;
+        text-align: center;
+    }
+    #about {
+        margin: 0;
+    }
+    img {
+        width: 100%;
+    }
+    .project {
+        width: 100%;
+    }
 }
